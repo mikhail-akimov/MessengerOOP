@@ -1,8 +1,5 @@
-from chat_server import ChatServer
 from chat_client import ChatClient
-from configs import Config, LoadFromArgparse, LoadFromConsole, LoadFromFile, LoadFromParams
-
-from jim import *
+from configs import Config, LoadFromParams
 
 if __name__ == "__main__":
     config = Config(LoadFromParams())

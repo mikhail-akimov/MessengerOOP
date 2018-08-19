@@ -1,6 +1,5 @@
 from chat_server import ChatServer
-from chat_client import ChatClient
-from configs import Config, LoadFromArgparse, LoadFromConsole, LoadFromFile, LoadFromParams
+from configs import Config, LoadFromParams
 from handlers import SimpleHandler
 
 if __name__ == "__main__":

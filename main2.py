@@ -1,7 +1,7 @@
 from chat_server import ChatServer
 from chat_client import ChatClient
-from config import Config, LoadFromArgparse, LoadFromConsole, LoadFromFile, LoadFromParams
-
+from configs import Config, LoadFromArgparse, LoadFromConsole, LoadFromFile, LoadFromParams
+from handlers import SimpleHandler
 
 if __name__ == "__main__":
 
@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     server = ChatServer(config.get_dict_config())
 
-    server.send_message(b"Hello")
+    server.serve_forever(SimpleHandler())
 

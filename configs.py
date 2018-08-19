@@ -46,4 +46,4 @@ class LoadFromArgparse:
 
 class LoadFromParams:
     def load(self):
-        return "localhost", 7777, 10, 0
+        return "localhost", 7777, 10, 0.2

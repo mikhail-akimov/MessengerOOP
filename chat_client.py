@@ -9,7 +9,7 @@ class ChatClient(Chat):
         self.connect()
 
     def send_message(self, msg):
-        raise NotImplementedError
+        self.s.send(msg)
 
     def receive_message(self):
         return self.s.recv(1024)

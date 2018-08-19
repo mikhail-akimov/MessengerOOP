@@ -93,4 +93,5 @@ class JimLeave(JimMessage):
 class JimQuit(JimMessage):
 
     def __init__(self):
+        super().__init__()
         super()._set_action("quit")

@@ -80,6 +80,7 @@ class JimMsg(JimMessage):
     def message(self):
         return super()._message['message']
 
+
 class JimAuthenticate(JimMessage):
 
     def __init__(self, account_name, status):

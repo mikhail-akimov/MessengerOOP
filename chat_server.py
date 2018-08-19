@@ -30,7 +30,7 @@ class ChatServer(Chat):
 
     def _delete_clients(self, clients):
         print("Отключаю вырубившихся клиентов", clients)
-        self.clients = {key:val for key,val in self.clients.items() if val not in clients}
+        self.clients = {key: val for key, val in self.clients.items() if val not in clients}
 
     def serve_forever(self, handler):
         print("Сервер запущен")

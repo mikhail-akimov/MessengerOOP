@@ -1,6 +1,7 @@
 import jim
 import json
 
+
 class Handler:
 
     def handle(self, r, w, e, clients):

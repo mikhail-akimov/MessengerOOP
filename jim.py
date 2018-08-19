@@ -6,6 +6,10 @@ def get_unix_timestamp():
     return int(time.time())
 
 
+def convert_from_bytes(data):
+    return json.loads(data.decode('utf-8'))
+
+
 class Jim:
     def __init__(self, **kwargs):
         pass
@@ -15,19 +19,22 @@ class Jim:
 
 
 class JimMessage:
-    message = {}
+    _message = {}
 
     def __init__(self):
-        self.message.update({"time": get_unix_timestamp()})
+        self._message.update({"time": get_unix_timestamp()})
 
     def __str__(self):
-        return json.dumps(self.message)
+        return json.dumps(self._message)
+
+    def create_from_dict(self, d):
+        self._message.update(d)
 
     def _set_action(self, action):
-        self.message.update({"action": action})
+        self._message.update({"action": action})
 
     def _set_user(self, account_name, status):
-        self.message.update(
+        self._message.update(
             {
                 "user": {
                     "account_name": account_name,
@@ -37,7 +44,7 @@ class JimMessage:
         )
 
     def _set_room(self, room):
-        self.message.update(
+        self._message.update(
             {
                 "room": room
             }
@@ -65,6 +72,13 @@ class JimMsg(JimMessage):
         super().__init__()
         super()._set_action("msg")
 
+    @property
+    def name(self):
+        return super()._message['to']
+
+    @property
+    def message(self):
+        return super()._message['message']
 
 class JimAuthenticate(JimMessage):
 

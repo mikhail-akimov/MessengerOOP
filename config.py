@@ -31,7 +31,7 @@ class LoadFromConsole:
         listen = int(input("Input listen: "))
         timeout = float(input("Input timeout: "))
 
-        return (host, port, listen, timeout)
+        return host, port, listen, timeout
 
 
 class LoadFromArgparse:
@@ -41,8 +41,9 @@ class LoadFromArgparse:
         listen = int(input("Input listen: "))
         timeout = float(input("Input timeout: "))
 
-        return (host, port, listen, timeout)
+        return host, port, listen, timeout
+
 
 class LoadFromParams:
     def load(self):
-        return ("localhost", 7777, 10, 0)
+        return "localhost", 7777, 10, 0

@@ -10,8 +10,6 @@ class Chat:
         self.port = config["port"]
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-
-
     def receive_message(self):
         raise NotImplementedError
 

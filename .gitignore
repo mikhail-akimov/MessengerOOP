@@ -33,4 +33,6 @@ packages/
 *.dll
 /__pycache__/*
 .idea/*
-/__pycache__/chat.cpython-37.pyc
+*/__pycache__/*
+*/.pytest_cache/*
+.pytest_cache/*
